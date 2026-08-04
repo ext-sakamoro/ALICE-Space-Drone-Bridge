@@ -1,0 +1,10 @@
+/target
+**/*.rs.bk
+Cargo.lock.bak
+
+# Claude Code configuration (per user CLAUDE.md rule)
+CLAUDE.md
+.claude/
+
+# macOS
+.DS_Store

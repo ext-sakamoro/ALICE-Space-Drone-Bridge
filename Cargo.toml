@@ -1,0 +1,37 @@
+[package]
+name = "alice-space-drone-bridge"
+version = "0.1.0"
+edition = "2021"
+authors = ["Moroya Sakamoto <sakamoro@alicelaw.net>"]
+description = "Bridge between alice-space (QZSS / GNSS) and alice-drone (flight control): geodetic-to-local coordinate conversion, waypoint injection, geofence mapping, DOP-based control gating"
+license = "AGPL-3.0-only"
+repository = "https://github.com/ext-sakamoro/ALICE-Space-Drone-Bridge"
+keywords = ["drone", "gnss", "qzss", "navigation", "alice"]
+categories = ["science::robotics", "aerospace"]
+readme = "README.md"
+
+[lib]
+name = "alice_space_drone_bridge"
+path = "src/lib.rs"
+crate-type = ["rlib"]
+
+[dependencies]
+alice-space = { path = "../ALICE-Space" }
+alice-drone = { path = "../ALICE-Drone" }
+
+[dev-dependencies]
+proptest = "1.4"
+
+[features]
+default = []
+
+[[example]]
+name = "qzss_waypoint_navigation"
+path = "examples/qzss_waypoint_navigation.rs"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
