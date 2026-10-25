@@ -134,16 +134,16 @@ mod tests {
 
     #[test]
     fn good_fix_is_allowed() {
-        assert_eq!(quality_gate(&base_fix(), &QualityPolicy::default()), Gate::Allow);
+        assert_eq!(
+            quality_gate(&base_fix(), &QualityPolicy::default()),
+            Gate::Allow
+        );
     }
 
     #[test]
     fn no_fix_is_denied() {
         let fix = GnssFix::builder().build();
-        matches!(
-            quality_gate(&fix, &QualityPolicy::default()),
-            Gate::Deny(_)
-        );
+        matches!(quality_gate(&fix, &QualityPolicy::default()), Gate::Deny(_));
     }
 
     #[test]

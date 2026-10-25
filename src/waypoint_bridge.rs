@@ -25,7 +25,11 @@ impl Default for WaypointOptions {
 
 /// 単一 geodetic 点 → `Waypoint` (alice_drone Y-up 座標系: x=East, y=Up, z=North)。
 #[must_use]
-pub fn geodetic_to_waypoint(frame: &LocalFrame, target: Geodetic, opts: WaypointOptions) -> Waypoint {
+pub fn geodetic_to_waypoint(
+    frame: &LocalFrame,
+    target: Geodetic,
+    opts: WaypointOptions,
+) -> Waypoint {
     let local = frame.geodetic_to_drone(target);
     Waypoint::new(local, opts.arrival_radius_m, opts.cruise_speed_mps)
 }

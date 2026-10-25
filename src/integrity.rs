@@ -105,7 +105,9 @@ impl IntegrityMonitor {
 const fn merge_worst(a: IntegrityStatus, b: IntegrityStatus) -> IntegrityStatus {
     match (a, b) {
         (IntegrityStatus::Alert, _) | (_, IntegrityStatus::Alert) => IntegrityStatus::Alert,
-        (IntegrityStatus::Degraded, _) | (_, IntegrityStatus::Degraded) => IntegrityStatus::Degraded,
+        (IntegrityStatus::Degraded, _) | (_, IntegrityStatus::Degraded) => {
+            IntegrityStatus::Degraded
+        }
         _ => IntegrityStatus::Nominal,
     }
 }

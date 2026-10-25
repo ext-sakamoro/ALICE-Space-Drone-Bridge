@@ -58,9 +58,8 @@ impl LocalFrame {
         let east = -self.sin_lon * dx + self.cos_lon * dy;
         let north = -self.sin_lat * self.cos_lon * dx - self.sin_lat * self.sin_lon * dy
             + self.cos_lat * dz;
-        let up = self.cos_lat * self.cos_lon * dx
-            + self.cos_lat * self.sin_lon * dy
-            + self.sin_lat * dz;
+        let up =
+            self.cos_lat * self.cos_lon * dx + self.cos_lat * self.sin_lon * dy + self.sin_lat * dz;
 
         Vec3::new(east, north, up)
     }
