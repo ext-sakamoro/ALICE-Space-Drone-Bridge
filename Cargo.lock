@@ -3,12 +3,29 @@
 version = 4
 
 [[package]]
+name = "alice-det-math"
+version = "0.5.1"
+source = "git+https://github.com/ext-sakamoro/ALICE-DetMath?rev=9252dd22b0aae3110687097836808572a5323947#9252dd22b0aae3110687097836808572a5323947"
+
+[[package]]
 name = "alice-drone"
 version = "1.0.0"
 
 [[package]]
+name = "alice-ephemeris"
+version = "0.1.0"
+source = "git+https://github.com/ext-sakamoro/ALICE-Ephemeris?rev=4d5a13ffe4923ce271f1598eb7f24f148d2e4f8f#4d5a13ffe4923ce271f1598eb7f24f148d2e4f8f"
+dependencies = [
+ "alice-det-math",
+]
+
+[[package]]
 name = "alice-space"
-version = "0.7.0"
+version = "0.8.0"
+dependencies = [
+ "alice-det-math",
+ "alice-ephemeris",
+]
 
 [[package]]
 name = "alice-space-drone-bridge"

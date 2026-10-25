@@ -1,0 +1,3 @@
+# the sibling commits CI clones next to this repository (Cargo.toml takes them by path)
+ALICE-Space e7b3f6dbf82534870cbe6cb801a2557d33e9abfd
+ALICE-Drone 9b25adeb9d4eaedfe41bf3f58bc4a7402b6c4dea
