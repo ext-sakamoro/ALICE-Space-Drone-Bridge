@@ -143,7 +143,10 @@ mod tests {
     #[test]
     fn no_fix_is_denied() {
         let fix = GnssFix::builder().build();
-        matches!(quality_gate(&fix, &QualityPolicy::default()), Gate::Deny(_));
+        assert!(matches!(
+            quality_gate(&fix, &QualityPolicy::default()),
+            Gate::Deny(_)
+        ));
     }
 
     #[test]
