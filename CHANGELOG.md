@@ -3,7 +3,7 @@
 ## [Unreleased]
 
 ### Changed
-- License: `AGPL-3.0-only OR LicenseRef-Commercial` → `LicenseRef-Proprietary`; `LICENSE-Proprietary` holds the text
+- License: `AGPL-3.0-only` → `LicenseRef-Proprietary`; `LICENSE-Proprietary` holds the text
 
 ## [0.1.0] - 2026-08-05
 
